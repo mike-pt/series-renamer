@@ -326,6 +326,8 @@ def makeName(sname, eobj):
 	for i in o:
 		if i == '{{sname}}':
 			s = s.replace(i, fixName(sname), 1)
+		elif i == '{{episodenumber}}':
+            s = s.replace(i, str(eobj[ i[2:-2] ]).zfill(2), 1)
 		else:
 			s = s.replace(i, fixName(eobj[ i[2:-2] ]), 1)
 	return s
